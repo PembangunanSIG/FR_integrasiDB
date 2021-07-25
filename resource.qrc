@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="logoTEDK">
+    <file>logoTEDK.png</file>
+  </qresource>
+  <qresource prefix="Depan">
+    <file>IconDepan.png</file>
+  </qresource>
+  <qresource prefix="iconTEDK">
+    <file>iconTEDK.png</file>
+  </qresource>
+</RCC>

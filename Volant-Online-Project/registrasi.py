@@ -35,33 +35,37 @@ def main():
 
         
     # Define the window layout
-    layout = [
-        [sg.Text("R E G I S T R A S I", font='Any 17 bold bold', text_color='#5990F6')],
-        [
-        [sg.Image(filename="", key="-IMAGE-")],
-        sg.VSeparator(),
-        [
-            [sg.Text('NIS :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_NIS-', font='Any 7', text_color='#5990F6')],
-            [sg.Input(key='-IN_NIS-')],
-            [sg.Text('Nama :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_NAMA-', font='Any 7', text_color='#5990F6'),],
-            [sg.Input(key='-IN_NAMA-')],
-            [sg.Text('Panggilan :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_PANGGILAN-', font='Any 7', text_color='#5990F6'),],
-            [sg.Input(key='-IN_PANGGILAN-')],
-            [sg.Text('Angkatan :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_ANGKATAN-', font='Any 7', text_color='#5990F6')],
-            [sg.Input(key='-IN_ANGKATAN-')],
-            [sg.Text('Jurusan :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_JURUSAN-', font='Any 7', text_color='#5990F6')],
-            [sg.Input(key='-IN_JURUSAN-')],
-            [sg.Text('Kelas :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_KELAS-', font='Any 7', text_color='#5990F6')],
-            [sg.Input(key='-IN_KELAS-')],
-            [sg.Text('Email :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_EMAIL-', font='Any 7', text_color='#5990F6')],
-            [sg.Input(key='-IN_EMAIL-')],
-            [sg.Text('No WhatsUp :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_NOWA-', font='Any 7', text_color='#5990F6')],
-            [sg.Input(key='-IN_NOWA-')],
+    banner = [[sg.Text("R E G I S T R A S I", font='Any 17 bold bold', text_color='#5990F6')]]
+    webCam = [[sg.Image(filename="", key="-IMAGE-")]]
+    form   = [
+                [sg.Text('NIS :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_NIS-', font='Any 7', text_color='#5990F6')],
+                [sg.Input(key='-IN_NIS-')],
+                [sg.Text('Nama :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_NAMA-', font='Any 7', text_color='#5990F6'),],
+                [sg.Input(key='-IN_NAMA-')],
+                [sg.Text('Panggilan :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_PANGGILAN-', font='Any 7', text_color='#5990F6'),],
+                [sg.Input(key='-IN_PANGGILAN-')],
+                [sg.Text('Angkatan :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_ANGKATAN-', font='Any 7', text_color='#5990F6')],
+                [sg.Input(key='-IN_ANGKATAN-')],
+                [sg.Text('Jurusan :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_JURUSAN-', font='Any 7', text_color='#5990F6')],
+                [sg.Input(key='-IN_JURUSAN-')],
+                [sg.Text('Kelas :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_KELAS-', font='Any 7', text_color='#5990F6')],
+                [sg.Input(key='-IN_KELAS-')],
+                [sg.Text('Email :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_EMAIL-', font='Any 7', text_color='#5990F6')],
+                [sg.Input(key='-IN_EMAIL-')],
+                [sg.Text('No WhatsUp :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-OUT_NOWA-', font='Any 7', text_color='#5990F6')],
+                [sg.Input(key='-IN_NOWA-')],
 
-            [sg.Text('Status Foto :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-STATUS-', font='Any 7', text_color='#5990F6')],
-            [sg.Button('Tambah Data', font='Any 7', button_color='#5990F6')]
-        ]
-        ]]
+                [sg.Text('Status Foto :', font='Any 9 bold', text_color='#5990F6'), sg.Text(size=(15,1), key='-STATUS-', font='Any 7', text_color='#5990F6')],
+                [sg.Button('Tambah Data', font='Any 7', button_color='#5990F6')]
+            ] 
+    layout = [
+                [sg.Column(banner)],
+                [sg.Column(webCam),
+                sg.VSeparator(),
+                sg.Column(form)
+                ]
+            ] 
+        
     # Create the window and show it without the plot
     window = sg.Window("OpenCV Integration", layout, location=(800, 400))
 
